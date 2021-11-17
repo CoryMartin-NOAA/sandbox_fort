@@ -7,7 +7,7 @@ program githubci
   b = 1
   do i=1,10
     y = a*float(i) + b
-    print *, y
+    print *, i, y
   end do
 
 end program githubci
