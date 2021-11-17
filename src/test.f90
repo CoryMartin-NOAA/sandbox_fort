@@ -3,6 +3,7 @@ program githubci
   real :: a, b, y
   integer :: i
 
+  print *, 'Hello world, welcome to my Fortran sandbox!'
   a = 0.5
   b = 1
   do i=1,10
