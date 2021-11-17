@@ -12,10 +12,12 @@ jobs:
       run: |
         sudo apt-get install gfortran
 
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: sandbox_fort
+
     - name: Compile
       run: |
-        cd $GITHUB_WORKSPACE
-        ls
-        pwd
-        cd $GITHUB_WORKSPACE/src
+        cd $GITHUB_WORKSPACE/sandbox_fort/src
         gfortran -o a.out test.f90
