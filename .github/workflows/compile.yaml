@@ -24,6 +24,6 @@ jobs:
 
     - name: Run executable
       run: |
-        cd $GITHUB_WORKSPACE/sandbox_fort/s
+        cd $GITHUB_WORKSPACE/sandbox_fort/src
         ls -l
         ./a.out
