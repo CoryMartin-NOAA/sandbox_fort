@@ -14,5 +14,5 @@ jobs:
 
     - name: Compile
       run: |
-        cd src
+        cd $GITHUB_WORKSPACE/sandbox_fort/src
         gfortran -o a.out test.f90
