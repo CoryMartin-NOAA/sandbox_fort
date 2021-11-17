@@ -1,10 +1,10 @@
-name: gfortran Compile
+name: gfortran Compile and Run
 on: [push, pull_request]
 
 jobs:
   compile:
     runs-on: ubuntu-latest
-    name: Compile with gfortran
+    name: Compile with gfortran and run
 
     steps:
 
@@ -21,3 +21,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/sandbox_fort/src
         gfortran -o a.out test.f90
+
+    - name: Run executable
+      run: |
+        ./a.out
