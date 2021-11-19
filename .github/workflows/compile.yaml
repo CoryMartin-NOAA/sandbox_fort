@@ -17,18 +17,18 @@ jobs:
       id: cache-sandbox
       uses: actions/cache@v2
       with:
-        path: $GITHUB_WORKSPACE/bin
-        key: sandbox-20211119-2-${{ runner.os }}-gnu
+        path: ~/bin
+        key: sandbox-20211119-${{ runner.os }}-gnu
 
     - name: Build 
       if: steps.cache-sandbox.outputs.cache-hit != 'true'
       run: |
         cd $GITHUB_WORKSPACE/sandbox_fort/src
         gfortran -o a.out test.f90
-        mkdir -p $GITHUB_WORKSPACE/bin
-        cp a.out $GITHUB_WORKSPACE/bin/.
+        mkdir -p ~/bin
+        cp a.out ~/bin/.
 
     - name: Run executable
       run: |
-        cd $GITHUB_WORKSPACE/bin
+        cd ~/bin
         ./a.out
