@@ -13,4 +13,5 @@ jobs:
 
     - name: Echo success
       run: |
-        echo "RT Passed on NOAA RDHPCS Orion"
+        echo "RT Failed on NOAA RDHPCS Orion"
+        exit 1
