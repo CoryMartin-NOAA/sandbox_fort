@@ -7,11 +7,22 @@ jobs:
   test:
     if: ${{ github.event.label.name == 'bug' }}
     runs-on: ubuntu-latest
+    name: Fails on Orion
+
+    steps:
+
+    - name: Echo Fail
+      run: |
+        echo "RT Failed on NOAA RDHPCS Orion"
+        exit 1
+  testpass:
+    if: ${{ github.event.label.name == 'enhancement' }}
+    runs-on: ubuntu-latest
     name: Tested on Orion
 
     steps:
 
     - name: Echo success
       run: |
-        echo "RT Failed on NOAA RDHPCS Orion"
-        exit 1
+        echo "RT Passed on NOAA RDHPCS Orion"
+        exit 
