@@ -1,11 +1,11 @@
 name: Tested on Orion
 on:
-  label:
-    types: [created]
+  pull_request:
+    types: [labeled]
 
 jobs:
   test:
-    #if: ${{ github.event.label.name == 'bug' }}
+    if: ${{ github.event.label.name == 'bug' }}
     runs-on: ubuntu-latest
     name: Tested on Orion
 
